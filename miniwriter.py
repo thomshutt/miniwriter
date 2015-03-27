@@ -19,7 +19,9 @@ try:
     x = 0
     while True: 
         key = stdscr.getch()
-        if key == curses.KEY_BACKSPACE or key == curses.KEY_DC:
+        if key == 27: # Esc
+            quit()
+        elif key == curses.KEY_BACKSPACE or key == curses.KEY_DC:
             stdscr.delch(0,x-1) 
             x -= 1
         elif key == ord(' '):
